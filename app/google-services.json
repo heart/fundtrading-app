@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "62152779869",
+    "project_id": "pam-demo-app",
+    "storage_bucket": "pam-demo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62152779869:android:140d8884576418c6f045b4",
+        "android_client_info": {
+          "package_name": "com.kkpfg.fundtrading"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62152779869-84s9abvt242gdhr6bk87eisshkfdsml3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kkpfg.fundtrading",
+            "certificate_hash": "0eb1a0c7433997f85ee26e14f94018e18cea013c"
+          }
+        },
+        {
+          "client_id": "62152779869-g37ctrallpna2a4k3ls3h4d71kq7q7n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLNI08voWZnpUb5r6elsGl8pAeo3pnhiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62152779869-g37ctrallpna2a4k3ls3h4d71kq7q7n9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "62152779869-knaavgmu5etg0qeu66evtjkfqv1v9b7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pamDemoFlutterApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

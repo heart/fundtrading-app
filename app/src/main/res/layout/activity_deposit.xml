@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".view.activities.DepositActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:text="Deposit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginBottom="20dp"
+            />
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <RadioButton
+                android:id="@+id/amount_1000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1000 THB" />
+            <RadioButton
+                android:id="@+id/amount_5000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5000 THB" />
+            <RadioButton
+                android:id="@+id/amount_10000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10000 THB" />
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:text="Confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
