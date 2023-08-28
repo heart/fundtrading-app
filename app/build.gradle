@@ -50,9 +50,10 @@ android {
         }
         device {
             dimension 'environment'
-            buildConfigField "String", "BASE_API_URL", "\"http://192.168.68.56:3000\""
+            buildConfigField "String", "BASE_API_URL", "\"http://192.168.68.55:3000\""
         }
     }
+
 }
 
 dependencies {

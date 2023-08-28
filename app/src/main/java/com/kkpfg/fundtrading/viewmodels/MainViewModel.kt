@@ -1,12 +1,14 @@
 package com.kkpfg.fundtrading.viewmodels
 
 import TokenManager
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kkpfg.fundtrading.data.api.APIClient
 import com.kkpfg.fundtrading.data.api.LoginRequest
 import com.kkpfg.fundtrading.data.api.models.ErrorResponse
+import com.kkpfg.fundtrading.data.sqlite.TokenDatasource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +27,7 @@ class MainViewModel(private val mockServer: HttpUrl? = null) : ViewModel() {
         get() = _loginErrorMessage
 
 
-    fun doLogin(email: String, password:String){
+    fun doLogin(context: Context, email: String, password:String){
 
         val authAPI = APIClient.getAuthAPI(mockServer)
 
@@ -38,6 +40,10 @@ class MainViewModel(private val mockServer: HttpUrl? = null) : ViewModel() {
                         val accessToken = it.accessToken
                         val refreshToken = it.refreshToken
                         if(accessToken != null && refreshToken != null){
+
+                            val tokenDatasource = TokenDatasource(context)
+                            tokenDatasource.saveToken(accessToken,refreshToken)
+
                             TokenManager.getTokenManager().saveTokens(accessToken,refreshToken)
                             _isLoginSuccess.value = true
                         }

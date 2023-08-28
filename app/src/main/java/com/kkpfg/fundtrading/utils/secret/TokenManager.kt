@@ -33,7 +33,6 @@ class TokenManager(private val context: Context) {
     init{
         prefs = KsPrefs(context){
             encryptionType = EncryptionType.KeyStore("token_keystore", KeyTagSize.SIZE_128_BITS)
-            //encryptionType = EncryptionType.AesEcb("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", KeySize.SIZE_256_BITS)
         }
     }
 

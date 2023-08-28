@@ -15,6 +15,7 @@ import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.google.firebase.FirebaseApp
+import com.kkpfg.fundtrading.data.sqlite.TokenDatasource
 import com.kkpfg.fundtrading.databinding.ActivityMainBinding
 import com.kkpfg.fundtrading.viewmodels.MainViewModel
 
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener{
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()
-            viewModel.doLogin(email, password)
+            viewModel.doLogin(this, email, password)
         }
 
         binding.registerBtn.setOnClickListener{
@@ -49,6 +50,13 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.isLoginSuccess.observe(this){
             if(it){
+
+                val tokenDatasource = TokenDatasource(this)
+                val token1 = tokenDatasource.getAccessToken()
+                val token2 = tokenDatasource.getRefreshToken()
+
+                Log.d("SQLITE", "Token1=${token1}, Token2=${token2}")
+
                 gotoHome()
             }
         }
